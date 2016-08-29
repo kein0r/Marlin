@@ -376,18 +376,19 @@
   
   // Horizontal offset from middle of printer to smooth rod center.
   // Calculated as the radius of the circumscribed circle of the triagnle side/sqrt(3)
-  #define DELTA_SMOOTH_ROD_OFFSET 212.357 // mm
+  #define DELTA_SMOOTH_ROD_OFFSET (325.0 + 2 * 20.0) / 1.7320508 // mm
 
   // Horizontal offset of the universal joints on the end effector.
   #define DELTA_EFFECTOR_OFFSET 20.0 // mm
 
   // Width of 2020 open beam profile (20mm) plus height of the corner triangle
   // Width_of_open_beam * (1 + sqrt(3)/2)
+  #define DELTA_CORNER_OFFSET 20.0 * (1 + 1.7320508/2)
 
   // Horizontal offset of the universal joints on the carriages.
   // HIWIN MGN12H sliding rail height including carriage (H) = 13.0mm
   // Carriage is 11.8mm high, at 
-  #define DELTA_CARRIAGE_OFFSET 30.0 // mm
+  #define DELTA_CARRIAGE_OFFSET 13.0 + 11.8/2 + (DELTA_CORNER_OFFSET) // mm
 
   // Horizontal distance bridged by diagonal push rods when effector is centered.
   #define DELTA_RADIUS (DELTA_SMOOTH_ROD_OFFSET-(DELTA_EFFECTOR_OFFSET)-(DELTA_CARRIAGE_OFFSET))
@@ -715,7 +716,7 @@ const bool Z_MIN_PROBE_ENDSTOP_INVERTING = false; // set to true to invert the l
 #if ENABLED(MANUAL_HOME_POSITIONS)
   #define MANUAL_X_HOME_POS 0
   #define MANUAL_Y_HOME_POS 0
-  #define MANUAL_Z_HOME_POS 277 // For delta: Distance between nozzle and print surface after homing.
+  #define MANUAL_Z_HOME_POS 304.0 // For delta: Distance between nozzle and print surface after homing.
 #endif
 
 // Use "Z Safe Homing" to avoid homing with a Z probe outside the bed area.
