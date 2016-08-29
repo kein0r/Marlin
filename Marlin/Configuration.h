@@ -371,13 +371,22 @@
   // Center-to-center distance of the holes in the diagonal push rods.
   #define DELTA_DIAGONAL_ROD 217.0 // mm
 
+  // All dimensions are measures from the corner of the outermost triangel. This triangle
+  // was chosen because it makes measuring DELTA_SMOOTH_ROD_OFFSET easier.
+  
   // Horizontal offset from middle of printer to smooth rod center.
+  // Calculated as the radius of the circumscribed circle of the triagnle side/sqrt(3)
   #define DELTA_SMOOTH_ROD_OFFSET 212.357 // mm
 
   // Horizontal offset of the universal joints on the end effector.
   #define DELTA_EFFECTOR_OFFSET 20.0 // mm
 
+  // Width of 2020 open beam profile (20mm) plus height of the corner triangle
+  // Width_of_open_beam * (1 + sqrt(3)/2)
+
   // Horizontal offset of the universal joints on the carriages.
+  // HIWIN MGN12H sliding rail height including carriage (H) = 13.0mm
+  // Carriage is 11.8mm high, at 
   #define DELTA_CARRIAGE_OFFSET 30.0 // mm
 
   // Horizontal distance bridged by diagonal push rods when effector is centered.
@@ -736,7 +745,7 @@ const bool Z_MIN_PROBE_ENDSTOP_INVERTING = false; // set to true to invert the l
 #define HOMING_FEEDRATE { HOMING_FEEDRATE_XYZ, HOMING_FEEDRATE_XYZ, HOMING_FEEDRATE_XYZ, HOMING_FEEDRATE_E }
 
 #define XYZ_FULL_STEPS_PER_ROTATION 200
-#define XYZ_MICROSTEPS 32
+#define XYZ_MICROSTEPS 16
 #define XYZ_BELT_PITCH 2
 #define XYZ_PULLEY_TEETH 16
 #define XYZ_STEPS ((XYZ_FULL_STEPS_PER_ROTATION) * (XYZ_MICROSTEPS) / double(XYZ_BELT_PITCH) / double(XYZ_PULLEY_TEETH))
