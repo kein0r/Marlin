@@ -211,11 +211,11 @@
 // The minimal temperature defines the temperature below which the heater will not be enabled It is used
 // to check that the wiring to the thermistor is not broken.
 // Otherwise this would lead to the heater being powered on all the time.
-#define HEATER_0_MINTEMP 5
+#define HEATER_0_MINTEMP 0
 #define HEATER_1_MINTEMP 5
 #define HEATER_2_MINTEMP 5
 #define HEATER_3_MINTEMP 5
-#define BED_MINTEMP 5
+#define BED_MINTEMP 0
 
 // When temperature exceeds max temp, your heater will be switched off.
 // This feature exists to protect your hotend from overheating accidentally, but *NOT* from thermistor short/failure!
@@ -376,7 +376,7 @@
   
   // Horizontal offset from middle of printer to smooth rod center.
   // Calculated as the radius of the circumscribed circle of the triagnle side/sqrt(3)
-  #define DELTA_SMOOTH_ROD_OFFSET (325.0 + 2 * 20.0) / 1.7320508 // mm
+  #define DELTA_SMOOTH_ROD_OFFSET (323.3 + 2 * 20.0) / 1.7320508 // mm
 
   // Horizontal offset of the universal joints on the end effector.
   #define DELTA_EFFECTOR_OFFSET 20.0 // mm
@@ -716,7 +716,7 @@ const bool Z_MIN_PROBE_ENDSTOP_INVERTING = false; // set to true to invert the l
 #if ENABLED(MANUAL_HOME_POSITIONS)
   #define MANUAL_X_HOME_POS 0
   #define MANUAL_Y_HOME_POS 0
-  #define MANUAL_Z_HOME_POS 303.9 // For delta: Distance between nozzle and print surface after homing.
+  #define MANUAL_Z_HOME_POS 300.2 // For delta: Distance between nozzle and print surface after homing.
 #endif
 
 // Use "Z Safe Homing" to avoid homing with a Z probe outside the bed area.
