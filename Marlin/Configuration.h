@@ -1212,7 +1212,6 @@
  */
 #define DISPLAY_CHARSET_HD44780 JAPANESE
 
-<<<<<<< HEAD
 /**
  * LCD TYPE
  *
