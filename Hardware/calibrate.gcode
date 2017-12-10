@@ -1,11 +1,13 @@
 G28
-G0 Z50 X0 Y0 F35000
-M117 "Calibrate center"
-G0 Z10 X0 Y0 F2000
-M117 "Xcos(30)*A Ysin(30)*A"
-M117 "Calibrate X-Motor"
-G0 X-68.28 Y-40 Z10 F2000
-M117 "Calibrate Y-Motor"
-G0 X69.28 Y-40 Z10 F2000
-M117 "Calibrate Z-Motor"
-G0 X0 Y80 Z10 F2000
+M117 "Verify Z-Min switch setting"
+G0 Z10 X20 Y20 F2000
+M117 "Manually lower head and check position"
+M114
+M117 "Calibrate dual drive is parallel"
+G0 Z10 X180 Y20 F2000
+M117 "Manually lower head and check position"
+M114
+M117 "Check back right corner"
+G0 Z10 X180 Y180 F2000
+M117 "Manually lower head and check position"
+M114
