@@ -59,8 +59,6 @@
 #define DEFAULT_MACHINE_NAME    "MB Replicator"
 #define BOARD_NAME              "Mightyboard"
 
-#define LARGE_FLASH true
-
 //
 // Servos
 //
@@ -121,11 +119,12 @@
 #define DIGIPOTS_I2C_SDA_Z  65   // K3
 #define DIGIPOTS_I2C_SDA_E0 27   // A5
 #define DIGIPOTS_I2C_SDA_E1 77   // J6
+#define DIGIPOT_I2C_ADDRESS_A 0x2F   // unshifted slave address (5E <- 2F << 1)
 
 //
 // Temperature Sensors
 //
-#define TEMP_BED_PIN        69   // K7
+#define TEMP_BED_PIN        15   // K7 - 69 / ADC15 - 15
 
 // SPI for Max6675 or Max31855 Thermocouple
 // Uses a separate SPI bus
@@ -268,9 +267,9 @@
 //
 // M3/M4/M5 - Spindle/Laser Control
 //
-#define SPINDLE_LASER_ENABLE_PIN 66  // K4   Pin should have a pullup!
-#define SPINDLE_LASER_PWM_PIN     8  // H5   MUST BE HARDWARE PWM
-#define SPINDLE_DIR_PIN          67  // K5
+#define SPINDLE_LASER_ENABLE_PIN 66   // K4   Pin should have a pullup!
+#define SPINDLE_LASER_PWM_PIN     8   // H5   MUST BE HARDWARE PWM
+#define SPINDLE_DIR_PIN          67   // K5
 
 
 
